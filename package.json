@@ -1,6 +1,6 @@
 {
   "name": "verify-azure-ad-jwt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "repository": "git@github.com:octoblu/verify-azure-ad-jwt.git",
   "author": "sqrtofsaturn <sqrtofsaturn@gmail.com>",
@@ -11,12 +11,12 @@
     "test:watch": "mocha --growl --watch"
   },
   "dependencies": {
-    "coffeescript": "next",
     "jsonwebtoken": "^7.4.0",
     "lodash": "^4.17.4",
     "request": "^2.81.0"
   },
   "devDependencies": {
+    "coffeescript": "next",
     "chai": "^3.5.0",
     "mocha": "^3.3.0",
     "shmock": "^0.8.1"
