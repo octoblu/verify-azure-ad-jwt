@@ -1,4 +1,4 @@
 --bail
 --recursive
---compilers coffee:coffee-script
+--compilers coffee:coffeescript
 --require test/test_helper.js
