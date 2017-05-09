@@ -11,10 +11,11 @@ class Verifier
   constructor: ({ @publicKeysUrl }={}) ->
     @publicKeysUrl ?= PUBLIC_KEYS_URL
 
+
   publicKeyForKid: (kid, callback) =>
     return callback new Error 'Expected kid to be a non-empty string.' unless isString(kid) && !isEmpty(kid)
 
-    request.get @publicKeysUrl, json: true, (error, response, body) =>
+    request @publicKeysUrl, json: true, (error, response, body) =>
       return callback error if error?
       return callback new Error "Non 2xx response from microsoftonline: #{response.statusCode}." if response.statusCode > 299
 
@@ -38,7 +39,7 @@ class Verifier
       return callback error if error?
       jsonwebtoken.verify jwt, publicKey, algorithms: ['RS256'], (error, decoded) =>
         return callback @_formatJWTError error.message if error?
-        callback error, decoded
+        return callback null, decoded
 
   _formatJWTError: (message) =>
     new Error "#{capitalize message}."

@@ -6,6 +6,7 @@
   "author": "sqrtofsaturn <sqrtofsaturn@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "coffee --compile index.coffee",
     "test": "mocha",
     "test:watch": "mocha --growl --watch"
   },
