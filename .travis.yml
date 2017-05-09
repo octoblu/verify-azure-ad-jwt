@@ -1,0 +1,16 @@
+language: node_js
+branches:
+  only:
+    - '/^v[0-9]/'
+node_js: 
+- '7'
+before_deploy:
+- yarn build
+deploy:
+  provider: npm
+  email: serveradmin@octoblu.com
+  api_key:
+    secure: wL1m0jYXXmNcx0wXcpd1FRQTbngeNhYFfKA3wubzFsDmth9QMUrhbfMS9bT+R7/uiLsmUa8d77SuEqos2k9WWXNuNsowKKSZCkPQyBLoJ8+hs1HnIzDZ3c0tG6V0SnsTXvIO2XUQSxQnyEfmbOL4S4OgRs9aNAVcReH9UuBK6UXnITzH1il9x8Vkr8jyPKkLUzraQ14x5pHPqd2amn/EeAcYnJZkumCCOFFEL4reEhMQabAXg7Tu9aQAI0+HWKV388AQs11hjDdBI1D2dLtPsrcCtDP/oHBpWx8QmmT7RulLZUba7jqzFPzFprUHu38gjqJG3YYnbv32WWE+yOTV8kS75osJixZOHI7YKHKeAEYfrzESojlESNg1zh0P4zGgi0J/cVDKPN7WTIcMYp5T8rTw1RYeOgbQ/d+IzI32d1zbrElaWiQUg7dqt8LkdyLhkjcgwliZ8XQvJ0XURfT6C/Kdo0DZbwiHFm5rx77JhxSdCM9vjv7amNVD9r2qirZXCWFg/FdCZsesZimRcyx7I3jHICkb6Rsl0Eilibm5950QRSvUMY+225KAY+6Aq0I1+x+rJteyz4DGIOj/7yCTNd/iOUSwAgPgTl3NdHchHb/pL22ulVjTPOR+1eVDNVJDwrGcv4/F6NQkCWy4nfwHJRN3riBbDtCJYs1oSPNAU5s=
+  on:
+    tags: true
+    repo: octoblu/verify-azure-ad-jwt
